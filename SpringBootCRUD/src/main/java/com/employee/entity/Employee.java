@@ -1,11 +1,14 @@
 package com.employee.entity;
 
 import jakarta.persistence.Column;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Table(name = "employee")
@@ -16,8 +19,10 @@ public class Employee {
 	private Long id;
 	@Column(name = "Name")
 	private String name;
+	@Email
 	@Column(name = "Email_ID")
 	private String emailId;
+	@Min(value = 5000)
 	@Column(name = "Salary")
 	private Double salary;
 	@Column(name = "Age")
